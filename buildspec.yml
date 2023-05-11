@@ -4,6 +4,9 @@ env:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
+  install:
+      commands:
+        - pip install ggshield
   build:
     commands:
       - echo Build started on `date`
