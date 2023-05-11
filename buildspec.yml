@@ -17,7 +17,6 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - sudo systemctl start docker
       - docker pull gitguardian/ggshield:latest
       - docker run --name ggshieldcli gitguardian/ggshield:latest
   post_build:
