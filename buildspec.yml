@@ -8,9 +8,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker pull gitguardian/ggshield:latest
-      - docker run --name ggshieldcli gitguardian/ggshield:latest
-      - ggshield secret scan ci
+#       - docker pull gitguardian/ggshield:latest
+#       - docker run --name ggshieldcli gitguardian/ggshield:latest
+      - ggshield auth login --method=token
+      - ggshield secret scan
   
 
 
