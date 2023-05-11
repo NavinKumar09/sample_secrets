@@ -4,29 +4,13 @@ env:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
-#   pre_build:
-#     commands:
-#       - sudo yum update -y
-#       - sudo amazon-linux-extras install docker
-#       - apt update
-#       - apt install apt
-#       - sudo apt-get install sysvinit-utils
-#       - sudo service docker start
-#       - sudo usermod -a -G docker ec2-user
-#   build:
-#     commands:
-#       - echo Build started on `date`
-#       - echo Building the Docker image...
-#       - docker pull gitguardian/ggshield:latest
-#       - docker run --name ggshieldcli gitguardian/ggshield:latest
-#       - ggshield secret scan ci
-  install:
-    commands:
-      - pip install ggshield
   build:
     commands:
-      - curl -H "Authorization: Token $gitguardianApiKey" https://api.gitguardian.com/v1/health
-      - ggshield secret scan repo sample_secrets
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker pull gitguardian/ggshield:latest
+      - docker run --name ggshieldcli gitguardian/ggshield:latest
+      - ggshield secret scan ci
   
 
 
