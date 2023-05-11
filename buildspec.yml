@@ -19,8 +19,6 @@ phases:
       - echo Building the Docker image...
       - docker pull gitguardian/ggshield:latest
       - docker run --name ggshieldcli gitguardian/ggshield:latest
-  post_build:
-    commands:
       - ggshield secret scan ci --apikey $gitguardianApiKey
 
 
