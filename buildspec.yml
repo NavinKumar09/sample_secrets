@@ -7,10 +7,9 @@ phases:
   pre_build:
     commands:
       - sudo yum update -y
-      - sudo yum install -y docker
-      - sudo systemctl enable docker
-      - sudo systemctl start docker
-      - sudo usermod -a -G docker awsuser
+      - sudo amazon-linux-extras install docker
+      - sudo service docker start
+      - sudo usermod -a -G docker ec2-user
   build:
     commands:
       - echo Build started on `date`
@@ -29,3 +28,8 @@ phases:
 # - script: ggshield secret scan ci
 #   env:
 #     GITGUARDIAN_API_KEY: $gitguardianApiKey
+
+# sudo yum install -y docker
+#       - sudo systemctl enable docker
+#       - sudo systemctl start docker
+#       - sudo usermod -a -G docker awsuser
