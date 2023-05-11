@@ -22,7 +22,7 @@ phases:
       commands:
         - ggshield secret scan ci
           env:
-            GITGUARDIAN_API_KEY: $gitguardianApiKey
+            gitguardianApiKey
     
 
 # container:
