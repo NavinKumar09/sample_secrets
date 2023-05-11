@@ -21,7 +21,8 @@ phases:
   build:
       commands:
         - ggshield secret scan ci
-          env: GITGUARDIAN_API_KEY: $gitguardianApiKey
+          env:
+            GITGUARDIAN_API_KEY: $gitguardianApiKey
     
 
 # container:
