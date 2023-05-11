@@ -25,7 +25,8 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - ggshield secret scan repo sample_secrets --api-key $gitguardianApiKey
+      - ggshield auth login --token-name awstoken
+      - ggshield secret scan repo sample_secrets
   
 
 
