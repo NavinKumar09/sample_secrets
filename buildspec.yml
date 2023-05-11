@@ -8,6 +8,8 @@ phases:
     commands:
       - sudo yum update -y
       - sudo amazon-linux-extras install docker
+      - apt update
+      - apt install apt
       - sudo apt-get install sysvinit-utils
       - sudo service docker start
       - sudo usermod -a -G docker ec2-user
