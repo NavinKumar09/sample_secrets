@@ -1,1 +1,23 @@
+version: 0.2
+env:
+  parameter-store:
+    GITGUARDIAN_API_KEY: gitguardianApiKey
+    
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker pull gitguardian/ggshield:latest
+  post_build:
+    commands:
+      - ggshield secret scan ci --apikey $gitguardianApiKey
 
+# container:
+#   image: gitguardian/ggshield:latest
+#   options: -u 0
+
+# steps:
+# - script: ggshield secret scan ci
+#   env:
+#     GITGUARDIAN_API_KEY: $gitguardianApiKey
