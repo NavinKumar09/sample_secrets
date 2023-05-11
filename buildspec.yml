@@ -25,7 +25,8 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - ggshield auth login --method=token
+      - curl -H "Authorization: Token $gitguardianApiKey" \
+           https://api.gitguardian.com/v1/health
       - ggshield secret scan repo sample_secrets
   
 
