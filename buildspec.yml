@@ -20,7 +20,8 @@ phases:
         - pip install ggshield
   build:
       commands:
-        - ggshield scan --api-key $gitguardianApiKey
+        - ggshield secret scan ci
+          env: GITGUARDIAN_API_KEY: $gitguardianApiKey
     
 
 # container:
