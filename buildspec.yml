@@ -13,13 +13,20 @@ phases:
 #       - sudo apt-get install sysvinit-utils
 #       - sudo service docker start
 #       - sudo usermod -a -G docker ec2-user
+#   build:
+#     commands:
+#       - echo Build started on `date`
+#       - echo Building the Docker image...
+#       - docker pull gitguardian/ggshield:latest
+#       - docker run --name ggshieldcli gitguardian/ggshield:latest
+#       - ggshield secret scan ci
+  install:
+    commands:
+      - pip install ggshield
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker pull gitguardian/ggshield:latest
-      - docker run --name ggshieldcli gitguardian/ggshield:latest
-      - ggshield secret scan ci
+      - ggshield scan
+  
 
 
 
