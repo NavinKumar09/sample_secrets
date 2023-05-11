@@ -1,7 +1,7 @@
 version: 0.2
 env:
   parameter-store:
-     gitguardianApiKey: GITGUARDIAN_API_KEY
+     gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
 #   pre_build:
@@ -25,7 +25,7 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - ggshield secret scan repo sample_secrets
+      - ggshield secret scan repo sample_secrets --api-key $gitguardianApiKey
   
 
 
