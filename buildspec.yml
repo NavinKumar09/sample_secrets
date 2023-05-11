@@ -8,8 +8,8 @@ phases:
     commands:
       - sudo yum update -y
       - sudo yum install -y docker
-      - apt-get install sysvinit-utils
-      - sudo service docker start
+      - sudo systemctl enable docker
+      - sudo systemctl start docker
       - sudo usermod -a -G docker awsuser
   build:
     commands:
