@@ -3,26 +3,26 @@ env:
   parameter-store:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
-# phases:
-#   build:
-#     commands:
-#       - echo Build started on `date`
-#       - echo Building the Docker image...
-#       - docker pull gitguardian/ggshield:latest
-#       - docker run --name ggshieldcli gitguardian/ggshield:latest
-#       - ggshield secret scan ci
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker pull gitguardian/ggshield:latest
+      - docker run --name ggshieldcli gitguardian/ggshield:latest
+      - ggshield secret scan ci
   
 
 
-phases:
-  install:
-      commands:
-        - pip install ggshield
-  build:
-      commands:
-        - ggshield secret scan ci
-          env:
-            gitguardianApiKey
+# phases:
+#   install:
+#       commands:
+#         - pip install ggshield
+#   build:
+#       commands:
+#         - ggshield secret scan ci
+#           env:
+#             gitguardianApiKey
     
 
 # container:
