@@ -4,13 +4,17 @@ env:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
+  install:
+    commands:
+      - pip install ggshield
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker pull gitguardian/ggshield:latest
-      - docker run --name ggshieldcli gitguardian/ggshield:latest
-      - ggshield secret scan ci
+      - echo some commands will be added
+  
+artifacts:
+  files:
+  - '**/*'
+  name: gitguardian_results
   
 
 
