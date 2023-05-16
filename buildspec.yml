@@ -2,6 +2,8 @@ version: 0.2
 env:
   parameter-store:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
+  variables:
+    TZ: "Asia/Kolkata"
    
 phases:
   build:
@@ -14,7 +16,8 @@ phases:
 artifacts:
   files:
   - '*.txt'
-  name: ${CODEBUILD_BUILD_ID}-$(date +'%Y-%m-%d_%H-%M-%S')
+  name: ${CODEBUILD_BUILD_ID}-$(TZ=$TZ date +'%Y-%m-%d_%H-%M-%S')
+#   $(date +'%Y-%m-%d_%H-%M-%S')
 #   name: gitguardian_results-$(date +%Y-%m-%d)
   
 
