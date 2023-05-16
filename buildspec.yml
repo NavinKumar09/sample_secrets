@@ -9,7 +9,7 @@ phases:
       - echo some commands will be added
   post_build:
     commands:
-      - ggshield secret scan ci
+      - ggshield secret scan ci gitguardianApiKey
   
 artifacts:
   files:
