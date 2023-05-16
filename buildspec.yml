@@ -6,10 +6,13 @@ env:
     TZ: "Asia/Kolkata"
    
 phases:
+  install:
+    commands:
+      - pip install ggshield
   build:
     commands:
       - echo some commands will be added > sample.txt
-      - ggshield secret scan repo sample_secrets
+      - ggshield secret scan ci
   post_build:
     commands:
       - echo post build
