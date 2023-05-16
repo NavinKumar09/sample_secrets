@@ -14,7 +14,7 @@ phases:
 artifacts:
   files:
   - '*.txt'
-  name: gitguardian_results-${CODEBUILD_BUILD_ID}
+  name: ${CODEBUILD_BUILD_ID}-$(date +%Y-%m-%d)
 #   name: gitguardian_results-$(date +%Y-%m-%d)
   
 
