@@ -4,12 +4,11 @@ env:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
-  install:
-    commands:
-      - pip install ggshield
   build:
     commands:
       - echo some commands will be added
+  post_build:
+      - ggshield secret scan ci
   
 artifacts:
   files:
