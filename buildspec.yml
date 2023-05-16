@@ -1,7 +1,7 @@
 version: 0.2
-env:
-  parameter-store:
-     gitguardianApiKey: "GITGUARDIAN_API_KEY"
+# env:
+#   parameter-store:
+#      gitguardianApiKey: "GITGUARDIAN_API_KEY"
    
 phases:
   build:
