@@ -1,7 +1,7 @@
 version: 0.2
-env:
-  parameter-store:
-     gitguardianApiKey: "GITGUARDIAN_API_KEY"
+# env:
+#   parameter-store:
+#      gitguardianApiKey: "GITGUARDIAN_API_KEY"
   variables:
     TZ: "Asia/Kolkata"
    
@@ -11,7 +11,7 @@ phases:
       - echo some commands will be added > sample.txt
   post_build:
     commands:
-      - ggshield secret scan ci gitguardianApiKey
+      - ggshield secret scan ci
   
 artifacts:
   files:
