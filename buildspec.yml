@@ -8,6 +8,7 @@ env:
 phases:
   build:
     commands:
+      - echo $BUILD_ID
       - echo some commands will be added > sample.txt
   post_build:
     commands:
@@ -16,7 +17,7 @@ phases:
 artifacts:
   files:
   - '*.txt'
-  name: gitguardian_results-$(date +%Y-%m-%d)-$BUILD_ID
+  name: "gitguardian_results-$(date +%Y-%m-%d)-$BUILD_ID"
   
 
 
