@@ -2,10 +2,13 @@ version: 0.2
 env:
   parameter-store:
      gitguardianApiKey: "GITGUARDIAN_API_KEY"
+  variables:
+     BUILD_ID: $CODEBUILD_BUILD_ID
    
 phases:
   build:
     commands:
+      - echo "Build ID: $BUILD_ID"
       - echo some commands will be added > sample.txt
   post_build:
     commands:
@@ -14,7 +17,7 @@ phases:
 artifacts:
   files:
   - '*.txt'
-  name: gitguardian_results-$(date +%Y-%m-%d)
+  name: gitguardian_results-$(date +%Y-%m-%d)-$BUILD_ID
   
 
 
