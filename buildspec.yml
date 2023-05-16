@@ -13,8 +13,8 @@ phases:
   
 artifacts:
   files:
-  - '**/*'
-  name: gitguardian_results
+  - '.txt'
+  name: gitguardian_results-$(date +%Y-%m-%d)
   
 
 
