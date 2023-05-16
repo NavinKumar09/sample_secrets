@@ -8,7 +8,6 @@ env:
 phases:
   build:
     commands:
-      - echo Build ID: $BUILD_ID
       - echo some commands will be added > sample.txt
   post_build:
     commands:
