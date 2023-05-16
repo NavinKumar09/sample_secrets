@@ -9,9 +9,10 @@ phases:
   build:
     commands:
       - echo some commands will be added > sample.txt
+      - ggshield secret scan ci
   post_build:
     commands:
-      - ggshield secret scan ci
+      - echo post build
   
 artifacts:
   files:
