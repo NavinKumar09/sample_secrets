@@ -6,7 +6,7 @@ env:
 phases:
   build:
     commands:
-      - echo some commands will be added
+      - echo some commands will be added > sample.txt
   post_build:
     commands:
       - ggshield secret scan ci gitguardianApiKey
