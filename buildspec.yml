@@ -11,14 +11,13 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - echo some commands will be added > sample.txt
-      - ls
-      - cd ..
-      - ls
-      - cd src
-      - ls
-      - ggshield quota
-      - yes | ggshield secret scan path -r .
+#       - ls
+#       - cd ..
+#       - ls
+#       - cd src
+#       - ls
+#       - ggshield quota
+      - yes | ggshield secret scan path -r . | tee output.txt
   post_build:
     commands:
       - echo post build
