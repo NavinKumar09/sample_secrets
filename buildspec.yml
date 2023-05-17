@@ -2,8 +2,8 @@ version: 0.2
 env:
   parameter-store:
      GITGUARDIAN_API_KEY: "GITGUARDIAN_API_KEY"
-  variables:
-    TZ: "Asia/Kolkata"
+#   variables:
+#     TZ: "Asia/Kolkata"
    
 phases:
   install:
@@ -11,7 +11,7 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - yes | ggshield secret scan path -r . | tee ${CODEBUILD_BUILD_ID}-$(TZ=$TZ date +'%Y-%m-%d_%H-%M-%S').txt
+      - yes | ggshield secret scan path -r . | tee ${CODEBUILD_BUILD_ID}-$(TZ="Asia/Kolkata" date +'%d-%Y-%m_%H-%M-%S').txt
   post_build:
     commands:
       - echo post build
