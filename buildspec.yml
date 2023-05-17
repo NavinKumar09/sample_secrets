@@ -18,7 +18,7 @@ phases:
       - cd src
       - ls
       - ggshield quota
-      - ggshield secret scan ci
+      - ggshield secret scan .
   post_build:
     commands:
       - echo post build
