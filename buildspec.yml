@@ -13,6 +13,7 @@ phases:
     commands:
       - echo some commands will be added > sample.txt
       - ls
+      - cd ..
       - ggshield quota
       - ggshield secret scan ci
   post_build:
