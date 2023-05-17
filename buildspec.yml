@@ -11,7 +11,7 @@ phases:
       - pip install ggshield
   build:
     commands:
-      - yes | ggshield secret scan path -r . | tee ${CODEBUILD_BUILD_ID}-$(TZ="Asia/Kolkata" date +'%d-%Y-%m_%H-%M-%S').txt
+      - yes | ggshield secret scan path -r . | tee ${CODEBUILD_BUILD_ID}-$(TZ="Asia/Kolkata" date +'%d-%m-%Y_%H-%M-%S').txt
   post_build:
     commands:
       - echo post build
